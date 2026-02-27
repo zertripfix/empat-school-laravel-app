@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,3 +18,6 @@ Route::prefix('products')->name('products.')->group(function () {
     Route::post('/', [ProductController::class, 'store'])->name('store');
     Route::delete('/{id}', [ProductController::class, 'delete'])->name('delete');
 });
+
+Route::resource('categories', CategoryController::class)->only(['index', 'show']);
+Route::resource('tags', TagController::class)->only(['index', 'show']);

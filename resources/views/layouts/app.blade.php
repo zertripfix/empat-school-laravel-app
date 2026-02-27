@@ -10,9 +10,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ route('products.index') }}">Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <div class=" navbar-nav ">
+                <a class="nav-item nav-link" href="{{ route('categories.index') }}">Categories</a>
+                <a class="nav-item nav-link" href="{{ route('tags.index') }}">Tags</a>
+            </div>
+        </div>
         </div>
     </nav>
 

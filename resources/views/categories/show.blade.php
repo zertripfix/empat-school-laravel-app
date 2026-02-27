@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Products')
+@section('title', $category->name)
 
 @section('content')
-    <h1>Products list</h1>
+    <h1>Category name: {{ $category->name }}</h1>
 
-    <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add a product</a>
+    <h2 class="mt-5">Products</h2>
 
-    @if ($products->count())
+    @if ($category->products->count())
         <div class="row">
-            @foreach ($products as $product)
+            @foreach ($category->products as $product)
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="card-header">
@@ -37,6 +37,7 @@
             @endforeach
         </div>
     @else
-        <p>There are no products!</p>
+        <p>There are not Products in this Category!</p>
     @endif
+
 @endsection
